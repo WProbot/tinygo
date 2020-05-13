@@ -222,7 +222,7 @@ commands:
       - store_artifacts:
           path: /tmp/tinygo_amd64.deb
       - webhook/notify:
-          endpoint: {{ .Environment.WEBHOOK_ENDPOINT }}
+          endpoint: "${WEBHOOK_ENDPOINT}"
       - save_cache:
           key: go-cache-v2-{{ checksum "go.mod" }}-{{ .Environment.CIRCLE_BUILD_NUM }}
           paths:
